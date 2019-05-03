@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>API Rest Node JS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+
+<script type="text/javascript">
+    // var socket = io('http://localhost:3000');
+
+    // socket.on('users', function (data) {
+    //     console.log(data);
+    // });
+
+    // socket.on('statusUser', function (data) {
+    //     console.log(data);
+    // });
+
+    var url = 'http://localhost:3000/users';
+
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.open("GET", url);
+    httpRequest.responseType = "json";
+    httpRequest.addEventListener("readystatechange", function () {
+        if (httpRequest.readyState == 4) {
+            if (httpRequest.status == 200) {
+                console.log(httpRequest.response);
+                console.log(httpRequest.response.headDocument);
+            } else {
+
+            }
+        }
+    });
+
+    httpRequest.send();
+
+</script>
+
+</html>
